@@ -62,15 +62,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-      - name: "Cypress Tests"
-        uses: replayio/action-cypress@v0.1.3
-        with:
-          command: npm run test:e2e -- --
-          browser: "Replay Chromium"
-          apiKey: ${{ secrets.CYPRESS_REPLAY_API_KEY }}
-          public: true
-          issue-number: ${{ github.event.pull_request.number }}
-          upload-all: true
+    - name: "Cypress Tests"
+      uses: replayio/action-cypress@v0.1.3
+      with:
+        command: npm run test:e2e -- --
+        browser: "Replay Chromium"
+        apiKey: ${{ secrets.CYPRESS_REPLAY_API_KEY }}
+        public: true
+        issue-number: ${{ github.event.pull_request.number }}
+        upload-all: true
 
   build:
     runs-on: ubuntu-latest
