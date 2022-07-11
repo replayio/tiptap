@@ -62,7 +62,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: "Cypress Tests"
+    - name: Cypress Tests
       uses: replayio/action-cypress@v0.1.3
       with:
         command: npm run test:e2e -- --
