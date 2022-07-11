@@ -5,8 +5,11 @@ name: build
 
 on:
   pull_request:
-    branches:
-      - main
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: Cypress browser to use
 
 jobs:
   lint:
