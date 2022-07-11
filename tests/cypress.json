@@ -3,6 +3,6 @@
   "screenshotOnRunFailure": false,
   "video": false,
   "integrationFolder": "../",
-  "testFiles": "tests/**/*.spec.{js,ts}",
+  "testFiles": "{demos,tests}/**/*.spec.{js,ts}",
   "defaultCommandTimeout": 15000
 }
