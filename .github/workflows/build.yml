@@ -71,6 +71,11 @@ jobs:
         public: true
         issue-number: ${{ github.event.pull_request.number }}
         upload-all: true
+    
+    - run: npx @replayio/replay ls
+      if: ${{ always() }}
+      shell: bash
+      
 
   build:
     runs-on: ubuntu-latest
