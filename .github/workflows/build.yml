@@ -63,7 +63,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Cypress Tests
-      uses: replayio/action-cypress@v0.1.4
+      uses: replayio/action-cypress@v0.1.6
       with:
         command: npm run test:e2e -- --
         browser: "Replay Firefox"

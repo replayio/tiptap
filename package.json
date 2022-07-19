@@ -64,7 +64,7 @@
     "webpack": "^5.68.0"
   },
   "dependencies": {
-    "@replayio/cypress": "^0.2.3",
+    "@replayio/cypress": "^0.2.7",
     "wait-on": "^6.0.1"
   }
 }
