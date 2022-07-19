@@ -62,8 +62,22 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: Load cached dependencies
+      uses: actions/cache@v3.0.4
+      id: cache
+      with:
+        path: |
+          **/node_modules
+          /home/runner/.cache/Cypress
+        key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Install dependencies
+      id: install-dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: npm install
+
     - name: Cypress Tests
-      uses: replayio/action-cypress@v0.1.6
+      uses: replayio/action-cypress@v0.1.4
       with:
         command: npm run test:e2e -- --
         browser: "Replay Firefox"
@@ -75,7 +89,6 @@ jobs:
     - run: npx @replayio/replay ls
       if: ${{ always() }}
       shell: bash
-      
 
   build:
     runs-on: ubuntu-latest
