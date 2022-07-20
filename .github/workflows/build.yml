@@ -75,6 +75,9 @@ jobs:
       id: install-dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm install
+      
+    - name: Install Replay browsers
+      run: npx @replayio/cypress install
 
     - name: Cypress Tests
       uses: replayio/action-cypress@v0.1.6
