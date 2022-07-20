@@ -85,6 +85,9 @@ jobs:
         public: true
         issue-number: ${{ github.event.pull_request.number }}
         upload-all: true
+      env:
+        DEBUG: "cypress:*"
+        RECORD_REPLAY_VERBOSE: 1
     
     - run: npx @replayio/replay ls
       if: ${{ always() }}
