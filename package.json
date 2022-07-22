@@ -14,7 +14,7 @@
     "lint:fix": "eslint --fix --quiet --no-error-on-unmatched-pattern ./",
     "lint:staged": "lint-staged",
     "test:open": "cypress open --project tests",
-    "test": "RECORD_REPLAY_VERBOSE=1 DEBUG=cypress:* cypress run --project tests",
+    "test": "cypress run --project tests",
     "test:e2e": "npm run start & npm run test",
     "cypress:record": "RECORD_ALL_CONTENT=1 RECORD_REPLAY_METADATA_FILE=$(mktemp) cypress run --project tests --browser 'Replay Firefox'",
     "build:demos": "npm --prefix ./demos run build",
