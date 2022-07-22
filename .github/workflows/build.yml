@@ -80,7 +80,7 @@ jobs:
       run: npx @replayio/cypress install
 
     - name: Cypress Tests
-      uses: replayio/action-cypress@v0.1.6
+      uses: replayio/action-cypress@v0.1.7
       with:
         command: npm run test:e2e -- --
         browser: "Replay Firefox"
