@@ -80,18 +80,14 @@ jobs:
       run: npx @replayio/cypress install
 
     - name: Cypress Tests
-      uses: replayio/action-cypress@v0.1.7
+      uses: replayio/action-cypress@v0.2.2
       with:
         command: npm run test:e2e -- --
         browser: "Replay Firefox"
-        apiKey: ${{ secrets.CYPRESS_REPLAY_API_KEY }}
+        api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
         public: true
-        issue-number: ${{ github.event.pull_request.number }}
         upload-all: true
-    
-    - run: npx @replayio/replay ls -a
-      if: ${{ always() }}
-      shell: bash
+
 
   build:
     runs-on: ubuntu-latest
