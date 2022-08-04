@@ -76,14 +76,13 @@ jobs:
 
     - name: Run tests with Cypress
       id: cypress
-      uses: cypress-io/github-action@v2
+      uses: cypress-io/github-action@v4.2.0
       with:
         browser: "Replay Firefox"
         cache-key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
         start: npm run start
         wait-on: 'http://localhost:3000'
         project: ./tests
-        quiet: true
       env:
         RECORD_ALL_CONTENT: 1
         RECORD_REPLAY_METADATA_FILE: /tmp/replay-metadata
