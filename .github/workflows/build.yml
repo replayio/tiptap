@@ -83,7 +83,6 @@ jobs:
         start: npm run start
         wait-on: 'http://localhost:3000'
         project: ./tests
-        browser: chrome
         quiet: true
       env:
         RECORD_ALL_CONTENT: 1
