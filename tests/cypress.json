@@ -1,5 +1,7 @@
 {
   "baseUrl": "http://localhost:3000",
+  "screenshotOnRunFailure": false,
+  "video": false,
   "integrationFolder": "../",
   "testFiles": "{demos,tests}/**/*.spec.{js,ts}",
   "defaultCommandTimeout": 15000

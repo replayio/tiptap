@@ -13,9 +13,10 @@
 
 const path = require('path')
 const globby = require('globby')
+const cypressReplay = require('@replayio/cypress')
 const webpackPreprocessor = require('@cypress/webpack-preprocessor')
 
-module.exports = on => {
+module.exports = (on, config) => {
   const alias = {}
 
   globby.sync('../packages/*', { onlyDirectories: true })
@@ -48,4 +49,6 @@ module.exports = on => {
   }
 
   on('file:preprocessor', webpackPreprocessor(options))
+  cypressReplay.default(on, config)
+  return config
 }
