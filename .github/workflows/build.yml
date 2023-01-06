@@ -89,7 +89,7 @@ jobs:
       id: cypress
       uses: cypress-io/github-action@v2
       with:
-        cache-key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+        # cache-key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
         start: npm run start
         wait-on: 'http://localhost:3000'
         project: ./tests
