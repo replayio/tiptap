@@ -93,8 +93,14 @@ jobs:
         start: npm run start
         wait-on: 'http://localhost:3000'
         project: ./tests
-        browser: chrome
+        browser: "Replay Chromium"
         quiet: true
+    - name: Upload replays ▶️
+      if: always()
+      uses: replayio/action-upload@v0.4.3
+      with:
+        api-key: rwk_G6CdrdK4F0h3W0XDUKcUXDVPkhlHCLSBLWA9U380nJM
+        public: true
 
     # - name: Export screenshots (on failure only)
     #   uses: actions/upload-artifact@v3.1.0
