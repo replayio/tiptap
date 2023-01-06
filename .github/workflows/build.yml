@@ -94,7 +94,6 @@ jobs:
         wait-on: 'http://localhost:3000'
         project: ./tests
         browser: "Replay Chromium"
-        quiet: true
     - name: Upload replays ▶️
       if: always()
       uses: replayio/action-upload@v0.4.3
